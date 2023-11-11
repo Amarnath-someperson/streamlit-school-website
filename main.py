@@ -19,7 +19,7 @@ with teacher_col:
     st.header('Login as Teacher')
     with st.form("login_widget"):
         username= st.text_input('Username').lower()
-        password = st.text_input('Password')
+        password = st.text_input('Password', type="password")
         # ask for input
         login_button = st.form_submit_button("Login")
     

@@ -1,0 +1,6 @@
+credentials:
+  usernames:
+    class_12:
+      name: John Smith
+      password: xxx.xxx
+      email: johnsmith@gmail.com

@@ -5,7 +5,7 @@ import numpy as np
 import yaml
 from yaml.loader import SafeLoader
 
-st.beta_set_page_config(page_title='Student Analysis', page_icon = favicon)
+st.beta_set_page_config(page_title='Student Analysis', page_icon = 'https://images.app.goo.gl/46ngdkqwdCEaQoWb9')
 
 with open('./config.yaml') as file:
     CONFIG = yaml.load(file, Loader=SafeLoader)

@@ -1,4 +1,0 @@
-streamlit_authenticator
-PyYAML
-bcrypt
-jwt

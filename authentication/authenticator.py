@@ -23,6 +23,8 @@ class Authenticate:
             st.session_state['logout'] = None # Streamlit blog
         
     def login(self, message: str = '') -> None:
+        if st.session_state['authentication_status']:
+            st.write('You were already logged in. This message will be changed with a new page in the future.')
         if not st.session_state['authentication_status']:
             st.write(message)
             with st.form("login_widget"):
@@ -33,6 +35,8 @@ class Authenticate:
                 # ask for input
                 if st.form_submit_button("Login"):
                     self._cred_check()
+                    if not st.session_state['authentication_status']:
+                        st.error('Username or password is incorrect.')
                     return st.session_state['name'], st.session_state['authentication_status'], st.session_state['username']
 
         

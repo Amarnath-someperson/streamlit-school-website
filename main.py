@@ -7,6 +7,13 @@ from authentication.authenticator import Authenticate
 
 st.set_page_config(page_title='Student Analysis', page_icon ='favicon.png')
 
+hide_st_style = """
+    <style>#MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}</style>
+"""
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
 st.title('Silver Hills Public School')
 authenticate = Authenticate()
 student_col, admin_col = st.columns(2)

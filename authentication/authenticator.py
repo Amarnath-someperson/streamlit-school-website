@@ -2,6 +2,10 @@ import jwt
 import bcrypt
 import streamlit as st
 import extra_streamlit_components as stx
+import yaml
+
+with open('./config.yaml') as file:
+    CONFIG = yaml.load(file, Loader=SafeLoader)
 
 class Authenticate:
     def __init__(self, creds: dict) -> None:
@@ -15,5 +19,5 @@ class Authenticate:
         if 'logout' not in st.session_state:
             st.session_state['logout'] = None
         
-    def teacher_login():
+    def admin_login():
         

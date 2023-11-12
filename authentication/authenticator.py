@@ -22,7 +22,7 @@ class Authenticate:
         if 'logout' not in st.session_state:
             st.session_state['logout'] = None
         
-    def login(self, message: str):
+    def login(self, message: str) -> None:
         if not st.session_state['authentication_status']:
             st.write(message)
             with st.form("login_widget"):
@@ -31,6 +31,6 @@ class Authenticate:
                 st.session_state['username'] = self.username
                 st.session_state['password'] = self.password
                 # ask for input
-                if st.form_submit_button("Login"):
-                    pass                
-        return True
+                if st.form_submit_button("Login"):               
+                    return True
+        

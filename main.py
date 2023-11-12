@@ -11,6 +11,7 @@ st.title('Silver Hills Public School')
 authenticate = Authenticate()
 student_col, admin_col = st.columns(2)
 with student_col:
+    
     st.header('Student Login')
 with admin_col:
     st.header('Administrator Login')
@@ -18,4 +19,7 @@ with admin_col:
     
     
 if login_button:
-    st.write('login functionality yet to be created. _authentication to do_.')
+    if st.session_state['authentication_status']:
+        st.write(f"""Login Complete 
+                 
+                 Welcome {st.session_state['name']}""")

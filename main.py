@@ -2,7 +2,7 @@ import streamlit as st
 import streamlit_authenticator as stauth
 import pandas as pdpip
 import numpy as np
-from widgets import Forms
+from authentication.authenticator import Authenticate
 
 from yaml.loader import SafeLoader
 
@@ -15,7 +15,7 @@ with student_col:
     st.header('Student Login')
 with admin_col:
     st.header('Administrator Login')
-    login_button = Forms.login('This login is for site administrators and teachers.')
+    login_button = Authenticate.login('This login is for site administrators and teachers.')
     
     
 if login_button:

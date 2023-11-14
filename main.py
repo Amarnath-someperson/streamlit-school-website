@@ -25,18 +25,5 @@ show_pages(
 
 st.title('Silver Hills Public School')
 authenticate = Authenticate()
-student_col, admin_col = st.columns(2)
 
-
-with student_col:
-    st.header('Student Login')
-    
-with admin_col:
-    st.header('Administrator Login')
-    login_button = authenticate.login('This login is for site administrators and teachers.')
-    
-if login_button:
-    if st.session_state['authentication_status']:
-        st.write(f"""Login Complete 
-                 
-            Welcome {st.session_state['name']}""")
+st.header('Student Portal')

@@ -22,9 +22,10 @@ class Authenticate:
         if 'logout' not in st.session_state:
             st.session_state['logout'] = None # Streamlit blog
         
-    def login(self, message: str = '') -> None:
+    def login(self, message: str = ''):
         if st.session_state['authentication_status']:
             st.write('You were already logged in. This message will be changed with a new page in the future.')
+            return False
         if not st.session_state['authentication_status']:
             st.write(message)
             with st.form("login_widget"):
@@ -37,7 +38,9 @@ class Authenticate:
                     self._cred_check()
                     if not st.session_state['authentication_status']:
                         st.error('Username or password is incorrect.')
-                    return st.session_state['name'], st.session_state['authentication_status'], st.session_state['username']
+                    else:
+                        return True
+        return False
 
         
     def _check_pw(self):
@@ -60,3 +63,6 @@ class Authenticate:
                 st.write(e)
         else:
             st.session_state['authentication_status']  = False
+            
+    def student_login(self):
+        pass

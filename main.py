@@ -1,5 +1,5 @@
 import streamlit as st
-from authentication.authenticator import Authenticate
+from utils.auth import Authenticate
 from st_pages import Page, show_pages, add_page_title
 
 
